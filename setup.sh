@@ -94,6 +94,6 @@ sudo ansible-playbook web_db.yaml
 echo " "
 echo "***"
 # 8080 must match the host port in the Vagrantfile for 192.168.33.20
-echo "You can test the successful Ansiible deploy at http://localhost:8080" 
+echo "You can test the successful Ansible deploy at http://localhost:8080" 
 echo "***"
 echo " "
