@@ -12,6 +12,13 @@ You will need Vagrant, Oracle Virtualbox and (on Windows) Cygwin installed.
 
 Windows users: see https://github.com/bertrandszoghy/powershell_vagrant_install
 
+This will create a private network of 3 Linux CentOs virtual machines:
+ans
+web
+db
+
+The ans machine will be the Ansible master.
+
 
 How to use:
 
