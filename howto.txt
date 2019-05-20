@@ -8,6 +8,9 @@ Requirements:
 
 Internet enabled PC.
 
+If you are using Windows, make sure all Windows Updates are concluded, that your sytem is up 
+to date and that no updates are pending waiting for a reboot.
+
 You will need Vagrant, Oracle Virtualbox and (on Windows) Cygwin installed.
 
 Windows users: see https://github.com/bertrandszoghy/powershell_vagrant_install
@@ -32,6 +35,8 @@ Type the commands:
 
 cd /cygdrive/c/Vagrantboxes/mynetwork
 vagrant up
+
+On Windows you will need to accept the security prompt indicating that Virtualbox wants to alter the network adapter configuration.
 
 Be patient.
 
