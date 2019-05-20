@@ -1,0 +1,46 @@
+---
+- hosts: webservers
+  become: yes
+  become_user: root
+  become_method: sudo
+  vars:
+    http_port: 80
+    doc_root: /var/www/html/
+
+  tasks:
+  - name: Ensure that Apache is installed
+    yum: name=httpd state=present
+    when: ansible_os_family == "RedHat"
+
+  - name: Start Apache Services
+    service: name=httpd enabled=yes state=started
+
+  - name: Copy Site Files
+    template: src=webroot/index.html dest={{ doc_root }}/index.html
+
+  handlers:
+     - name: Restart Apache
+       service: name=httpd state=restarted
+
+- hosts: dbservers
+  become: yes
+  become_user: root
+  become_method: sudo
+
+  tasks:
+  - name: Ensure MySQL is installed
+    yum: name=mysql-server state=present
+    when: ansible_os_family == "RedHat"
+
+  - name: Start MySQL
+    service: name=mysqld state=started
+
+- hosts: webservers:dbservers
+  become: yes
+  become_user: root
+  become_method: sudo
+
+  tasks:
+  - name: Stop IPTABLES NOW!!!
+    service: name=iptables state=stopped
+    

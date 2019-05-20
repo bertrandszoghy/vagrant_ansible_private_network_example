@@ -1,0 +1,49 @@
+An example of a Vagrant private network of CentOs VMs to test Ansible playbooks
+
+Author: Bertrand Szoghy
+bertrandszoghy.wordpress.com
+last modified: 2019-05-20
+
+Requirements:
+
+Internet enabled PC.
+
+You will need Vagrant, Oracle Virtualbox and (on Windows) Cygwin installed.
+
+Windows users: see https://github.com/bertrandszoghy/powershell_vagrant_install
+
+
+How to use:
+
+Copy files to target folder (as an example, I used C:\Vagrantboxes\mynetwork).
+
+On Windows:
+
+Open Cygwin Terminal (or Cygwin64 Terminal for 64bit Windows)
+
+Type the commands:
+
+cd /cygdrive/c/Vagrantboxes/mynetwork
+vagrant up
+
+Be patient.
+
+An Ansible playbook will be launched, installing Apache web server on the web vm and copuying over content to it. 
+The firewall is also disabled. To test all is working: in a browser on the Windows machine, go to:
+http://localhost:8080
+
+To log in to the image with SSH once it's ready (NO PASSWORD REQUIRED):
+
+# ans is the name of one of the 3 vms that will be started (see Vagrantfile)
+vagrant ssh ans
+
+# to log out use CTRL-D or:
+# exit
+
+To bring down the image:
+
+vagrant halt
+
+To clean up everything:
+
+vagrant destroy -f
