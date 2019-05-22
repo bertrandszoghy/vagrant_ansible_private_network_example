@@ -25,7 +25,7 @@ The ans machine will be the Ansible master.
 
 How to use:
 
-Copy files to target folder (as an example, I used C:\Vagrantboxes\mynetwork).
+Copy files to target folder (as an example, I used C:\Vagrantboxes\vagrant_ansible_private_network_example
 
 On Windows:
 
@@ -33,7 +33,7 @@ Open Cygwin Terminal (or Cygwin64 Terminal for 64bit Windows)
 
 Type the commands:
 
-cd /cygdrive/c/Vagrantboxes/mynetwork
+cd /cygdrive/c/Vagrantboxes/vagrant_ansible_private_network_example
 vagrant up
 
 On Windows you will need to accept the security prompt indicating that Virtualbox wants to alter the network adapter configuration.
